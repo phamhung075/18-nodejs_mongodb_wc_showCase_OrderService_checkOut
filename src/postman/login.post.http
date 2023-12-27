@@ -1,0 +1,11 @@
+@url_dev=http://localhost:3052/v1/api/
+
+### login
+POST {{url_dev}}/shop/login
+Content-Type: application/json
+x-api-key: fea4d5a8490256e493aaf5ce69b97a0c03549d0ada298ad4dff74068d4f5ee523d09ca0666087353d3df6b926f8b5860d131c1e8a783899b2fffd5143ae42fee
+
+{
+    "email": "cartepopup11@gmail.com",
+    "password": "123"
+}

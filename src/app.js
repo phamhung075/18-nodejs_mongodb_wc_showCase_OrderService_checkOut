@@ -7,7 +7,7 @@ const { default: helmet } = require("helmet");
 const morgan = require("morgan");
 const app = express();
 
-//console.log(`Process::`, process.env);
+// console.log(`Process::`, process.env);
 
 // init middlewares
 app.use(morgan("dev"));
@@ -20,6 +20,7 @@ app.use(morgan("dev"));
 app.use(helmet());
 app.use(compression());
 app.use(express.json());
+
 app.use(
   express.urlencoded({
     extended: true,
@@ -29,8 +30,8 @@ app.use(
 // init db
 require("./dbs/init.mongodb.js");
 
-// //check connect
-// const { countConnect } = require("./helpers/check.connect.js");
+//check connect
+const { countConnect } = require("./helpers/check.connect.js");
 // countConnect();
 
 // //check overload

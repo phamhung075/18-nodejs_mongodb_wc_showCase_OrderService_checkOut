@@ -2,10 +2,10 @@
 
 const mongoose = require("mongoose");
 const {
-  db: { host, name, port },
+  db: { host, name, username, password },
 } = require("../configs/config.mongodb");
 
-const connectString = `mongodb://${host}:${port}/${name}`;
+const connectString = `mongodb+srv://${username}:${password}@${host}/${name}`;
 
 console.log(`connectString:`, connectString);
 
@@ -25,7 +25,7 @@ class Database {
       .connect(connectString, {
         maxPoolSize: 50,
       })
-      .then((_) => console.log(`Connected Mongodb Success at port 27017`))
+      .then((_) => console.log(`Connected Mongodb Success`))
       .catch((err) => console.log(`MongoDB Connect Error:`, err));
   }
   // dev
